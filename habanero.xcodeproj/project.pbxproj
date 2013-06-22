@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF99A41A1776617600D2DC04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF99A4191776617600D2DC04 /* UIKit.framework */; };
+		CF99A41C1776617600D2DC04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF99A41B1776617600D2DC04 /* Foundation.framework */; };
+		CF99A41E1776617600D2DC04 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF99A41D1776617600D2DC04 /* CoreGraphics.framework */; };
+		CF99A4241776617600D2DC04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF99A4221776617600D2DC04 /* InfoPlist.strings */; };
+		CF99A4261776617600D2DC04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF99A4251776617600D2DC04 /* main.m */; };
+		CF99A42A1776617600D2DC04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF99A4291776617600D2DC04 /* AppDelegate.m */; };
+		CF99A42C1776617600D2DC04 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CF99A42B1776617600D2DC04 /* Default.png */; };
+		CF99A42E1776617600D2DC04 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF99A42D1776617600D2DC04 /* Default@2x.png */; };
+		CF99A4301776617600D2DC04 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF99A42F1776617600D2DC04 /* Default-568h@2x.png */; };
+		CF99A4331776617600D2DC04 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF99A4311776617600D2DC04 /* MainStoryboard_iPhone.storyboard */; };
+		CF99A4361776617600D2DC04 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF99A4341776617600D2DC04 /* MainStoryboard_iPad.storyboard */; };
+		CF99A4391776617600D2DC04 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF99A4381776617600D2DC04 /* MasterViewController.m */; };
+		CF99A43C1776617600D2DC04 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF99A43B1776617600D2DC04 /* DetailViewController.m */; };
+		CF99A4441776617600D2DC04 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF99A4431776617600D2DC04 /* SenTestingKit.framework */; };
+		CF99A4451776617600D2DC04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF99A4191776617600D2DC04 /* UIKit.framework */; };
+		CF99A4461776617600D2DC04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF99A41B1776617600D2DC04 /* Foundation.framework */; };
+		CF99A44E1776617600D2DC04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF99A44C1776617600D2DC04 /* InfoPlist.strings */; };
+		CF99A4511776617600D2DC04 /* habaneroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF99A4501776617600D2DC04 /* habaneroTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF99A4471776617600D2DC04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF99A40E1776617600D2DC04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF99A4151776617600D2DC04;
+			remoteInfo = habanero;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CF99A4161776617600D2DC04 /* habanero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = habanero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF99A4191776617600D2DC04 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CF99A41B1776617600D2DC04 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CF99A41D1776617600D2DC04 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CF99A4211776617600D2DC04 /* habanero-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "habanero-Info.plist"; sourceTree = "<group>"; };
+		CF99A4231776617600D2DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF99A4251776617600D2DC04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF99A4271776617600D2DC04 /* habanero-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "habanero-Prefix.pch"; sourceTree = "<group>"; };
+		CF99A4281776617600D2DC04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CF99A4291776617600D2DC04 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CF99A42B1776617600D2DC04 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CF99A42D1776617600D2DC04 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CF99A42F1776617600D2DC04 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CF99A4321776617600D2DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		CF99A4351776617600D2DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		CF99A4371776617600D2DC04 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		CF99A4381776617600D2DC04 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		CF99A43A1776617600D2DC04 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		CF99A43B1776617600D2DC04 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		CF99A4421776617600D2DC04 /* habaneroTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = habaneroTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF99A4431776617600D2DC04 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		CF99A44B1776617600D2DC04 /* habaneroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "habaneroTests-Info.plist"; sourceTree = "<group>"; };
+		CF99A44D1776617600D2DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF99A44F1776617600D2DC04 /* habaneroTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = habaneroTests.h; sourceTree = "<group>"; };
+		CF99A4501776617600D2DC04 /* habaneroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = habaneroTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF99A4131776617600D2DC04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF99A41A1776617600D2DC04 /* UIKit.framework in Frameworks */,
+				CF99A41C1776617600D2DC04 /* Foundation.framework in Frameworks */,
+				CF99A41E1776617600D2DC04 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF99A43E1776617600D2DC04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF99A4441776617600D2DC04 /* SenTestingKit.framework in Frameworks */,
+				CF99A4451776617600D2DC04 /* UIKit.framework in Frameworks */,
+				CF99A4461776617600D2DC04 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF99A40D1776617600D2DC04 = {
+			isa = PBXGroup;
+			children = (
+				CF99A41F1776617600D2DC04 /* habanero */,
+				CF99A4491776617600D2DC04 /* habaneroTests */,
+				CF99A4181776617600D2DC04 /* Frameworks */,
+				CF99A4171776617600D2DC04 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF99A4171776617600D2DC04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF99A4161776617600D2DC04 /* habanero.app */,
+				CF99A4421776617600D2DC04 /* habaneroTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF99A4181776617600D2DC04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF99A4191776617600D2DC04 /* UIKit.framework */,
+				CF99A41B1776617600D2DC04 /* Foundation.framework */,
+				CF99A41D1776617600D2DC04 /* CoreGraphics.framework */,
+				CF99A4431776617600D2DC04 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF99A41F1776617600D2DC04 /* habanero */ = {
+			isa = PBXGroup;
+			children = (
+				CF99A4281776617600D2DC04 /* AppDelegate.h */,
+				CF99A4291776617600D2DC04 /* AppDelegate.m */,
+				CF99A4311776617600D2DC04 /* MainStoryboard_iPhone.storyboard */,
+				CF99A4341776617600D2DC04 /* MainStoryboard_iPad.storyboard */,
+				CF99A4371776617600D2DC04 /* MasterViewController.h */,
+				CF99A4381776617600D2DC04 /* MasterViewController.m */,
+				CF99A43A1776617600D2DC04 /* DetailViewController.h */,
+				CF99A43B1776617600D2DC04 /* DetailViewController.m */,
+				CF99A4201776617600D2DC04 /* Supporting Files */,
+			);
+			path = habanero;
+			sourceTree = "<group>";
+		};
+		CF99A4201776617600D2DC04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF99A4211776617600D2DC04 /* habanero-Info.plist */,
+				CF99A4221776617600D2DC04 /* InfoPlist.strings */,
+				CF99A4251776617600D2DC04 /* main.m */,
+				CF99A4271776617600D2DC04 /* habanero-Prefix.pch */,
+				CF99A42B1776617600D2DC04 /* Default.png */,
+				CF99A42D1776617600D2DC04 /* Default@2x.png */,
+				CF99A42F1776617600D2DC04 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF99A4491776617600D2DC04 /* habaneroTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF99A44F1776617600D2DC04 /* habaneroTests.h */,
+				CF99A4501776617600D2DC04 /* habaneroTests.m */,
+				CF99A44A1776617600D2DC04 /* Supporting Files */,
+			);
+			path = habaneroTests;
+			sourceTree = "<group>";
+		};
+		CF99A44A1776617600D2DC04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF99A44B1776617600D2DC04 /* habaneroTests-Info.plist */,
+				CF99A44C1776617600D2DC04 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF99A4151776617600D2DC04 /* habanero */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF99A4541776617600D2DC04 /* Build configuration list for PBXNativeTarget "habanero" */;
+			buildPhases = (
+				CF99A4121776617600D2DC04 /* Sources */,
+				CF99A4131776617600D2DC04 /* Frameworks */,
+				CF99A4141776617600D2DC04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = habanero;
+			productName = habanero;
+			productReference = CF99A4161776617600D2DC04 /* habanero.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF99A4411776617600D2DC04 /* habaneroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF99A4571776617600D2DC04 /* Build configuration list for PBXNativeTarget "habaneroTests" */;
+			buildPhases = (
+				CF99A43D1776617600D2DC04 /* Sources */,
+				CF99A43E1776617600D2DC04 /* Frameworks */,
+				CF99A43F1776617600D2DC04 /* Resources */,
+				CF99A4401776617600D2DC04 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF99A4481776617600D2DC04 /* PBXTargetDependency */,
+			);
+			name = habaneroTests;
+			productName = habaneroTests;
+			productReference = CF99A4421776617600D2DC04 /* habaneroTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF99A40E1776617600D2DC04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Jay Vana";
+			};
+			buildConfigurationList = CF99A4111776617600D2DC04 /* Build configuration list for PBXProject "habanero" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF99A40D1776617600D2DC04;
+			productRefGroup = CF99A4171776617600D2DC04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF99A4151776617600D2DC04 /* habanero */,
+				CF99A4411776617600D2DC04 /* habaneroTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF99A4141776617600D2DC04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF99A4241776617600D2DC04 /* InfoPlist.strings in Resources */,
+				CF99A42C1776617600D2DC04 /* Default.png in Resources */,
+				CF99A42E1776617600D2DC04 /* Default@2x.png in Resources */,
+				CF99A4301776617600D2DC04 /* Default-568h@2x.png in Resources */,
+				CF99A4331776617600D2DC04 /* MainStoryboard_iPhone.storyboard in Resources */,
+				CF99A4361776617600D2DC04 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF99A43F1776617600D2DC04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF99A44E1776617600D2DC04 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CF99A4401776617600D2DC04 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF99A4121776617600D2DC04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF99A4261776617600D2DC04 /* main.m in Sources */,
+				CF99A42A1776617600D2DC04 /* AppDelegate.m in Sources */,
+				CF99A4391776617600D2DC04 /* MasterViewController.m in Sources */,
+				CF99A43C1776617600D2DC04 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF99A43D1776617600D2DC04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF99A4511776617600D2DC04 /* habaneroTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF99A4481776617600D2DC04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF99A4151776617600D2DC04 /* habanero */;
+			targetProxy = CF99A4471776617600D2DC04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF99A4221776617600D2DC04 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF99A4231776617600D2DC04 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CF99A4311776617600D2DC04 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF99A4321776617600D2DC04 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		CF99A4341776617600D2DC04 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF99A4351776617600D2DC04 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		CF99A44C1776617600D2DC04 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF99A44D1776617600D2DC04 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF99A4521776617600D2DC04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF99A4531776617600D2DC04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF99A4551776617600D2DC04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "habanero/habanero-Prefix.pch";
+				INFOPLIST_FILE = "habanero/habanero-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CF99A4561776617600D2DC04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "habanero/habanero-Prefix.pch";
+				INFOPLIST_FILE = "habanero/habanero-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CF99A4581776617600D2DC04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/habanero.app/habanero";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "habanero/habanero-Prefix.pch";
+				INFOPLIST_FILE = "habaneroTests/habaneroTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		CF99A4591776617600D2DC04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/habanero.app/habanero";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "habanero/habanero-Prefix.pch";
+				INFOPLIST_FILE = "habaneroTests/habaneroTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF99A4111776617600D2DC04 /* Build configuration list for PBXProject "habanero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF99A4521776617600D2DC04 /* Debug */,
+				CF99A4531776617600D2DC04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF99A4541776617600D2DC04 /* Build configuration list for PBXNativeTarget "habanero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF99A4551776617600D2DC04 /* Debug */,
+				CF99A4561776617600D2DC04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF99A4571776617600D2DC04 /* Build configuration list for PBXNativeTarget "habaneroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF99A4581776617600D2DC04 /* Debug */,
+				CF99A4591776617600D2DC04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF99A40E1776617600D2DC04 /* Project object */;
+}
