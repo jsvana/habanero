@@ -7,6 +7,8 @@
 //
 
 #import "DetailViewController.h"
+#import "Comic.h"
+#import "AFJSONRequestOperation.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -36,14 +38,39 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        Comic *comic = self.detailItem;
+        self.navigationItem.title = comic.name;
+        [self fetchComicData:comic];
     }
+}
+
+- (void)fetchComicData:(Comic *)comic {
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://piperka.net/s/archive/%d", comic.id]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        Comic *comic = self.detailItem;
+        [comic addBase:[JSON valueForKey:@"url_base"] andTail:[JSON valueForKey:@"url_tail"]];
+        NSString *comicID = [[[JSON valueForKey:@"pages"] objectAtIndex:comic.latest ] objectAtIndex:0];
+        
+        if (comicID == (id)[NSNull null] || comicID.length == 0) {
+            comicID = @"";
+        }
+        
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", comic.urlBase, comicID, comic.urlTail]];
+        [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Unable to load data, %@", error);
+    }];
+    
+    [operation start];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     [self configureView];
 }
 
@@ -57,7 +84,7 @@
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Comics", @"Comics");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }

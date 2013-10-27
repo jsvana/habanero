@@ -9,6 +9,12 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+#import "ComicTableCell.h"
+
+#import "AFHTTPClient.h"
+#import "AFJSONRequestOperation.h"
+#import "User.h"
+#import "Comic.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -29,28 +35,95 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    NSURL *url = [NSURL URLWithString:@"http://piperka.net"];
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            @"jsvana", @"user",
+                            @"linked", @"passwd_clear",
+                            nil];
+    [httpClient postPath:@"/updates.html" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:@"http://piperka.net/updates.html"]];
+        for (NSHTTPCookie *cookie in cookies) {
+            if ([cookie.name isEqualToString:@"p_session"]) {
+                csrfHam = cookie.value;
+                break;
+            }
+        }
+        [self fetchComicsInformation];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+    }];
+}
+
+- (void)fetchComicsInformation {
+    NSURL *url = [NSURL URLWithString:@"http://piperka.net/d/comics_ordered.json"];
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
+    
+    [httpClient postPath:@"/d/comics_ordered.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *jsonParsingError = nil;
+        NSArray *comicsData = [NSJSONSerialization JSONObjectWithData:operation.responseData
+                                                                  options:0 error:&jsonParsingError];
+        comics = [[NSMutableDictionary alloc] initWithCapacity:[comicsData count]];
+        
+        for (id comic in comicsData) {
+            [comics setObject:[comic objectAtIndex:1] forKey:[comic objectAtIndex:0]];
+        }
+        
+        [self fetchUserData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+    }];
+}
+
+- (void)fetchUserData {
+    NSURL *url = [NSURL URLWithString:@"http://piperka.net/s/uprefs"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        user = [[User alloc] initWithName: [JSON valueForKeyPath:@"name"]];
+        NSArray *subscriptions = [JSON valueForKeyPath:@"subscriptions"];
+        subscriptionData = [[NSMutableArray alloc] initWithCapacity:[subscriptions count]];
+        
+        for (id sub in subscriptions) {
+            [user addSubscription:sub];
+            
+            Comic *comic = [[Comic alloc] initWithName:[comics objectForKey:[sub objectAtIndex:0]] id:[[sub objectAtIndex:0] integerValue] latest:[[sub objectAtIndex:1] integerValue] total:[[sub objectAtIndex:2] integerValue] andUnread:[[sub objectAtIndex:4] integerValue]];
+            
+            if (comic.unread > 0) {
+                [subscriptionData addObject:comic];
+            }
+        }
+        
+        [self.tableView reloadData];
+    } failure:nil];
+    
+    [operation start];
+}
+
+- (void)clearUpdates:(Comic *)comic {
+    NSString *update = [NSString stringWithFormat:@"updates.html?redir=%d&csrf_ham=%@", comic.id, csrfHam];
+    
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://piperka.net"]];
+    
+    [httpClient postPath:update parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        comic.unread = 0;
+        
+        NSIndexPath *ipath = [self.tableView indexPathForSelectedRow];
+        [self.tableView reloadData];
+        [self.tableView selectRowAtIndexPath:ipath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+    }];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - Table View
@@ -62,15 +135,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return subscriptionData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    ComicTableCell *cell = (ComicTableCell *)[tableView dequeueReusableCellWithIdentifier:@"ComicTableCell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    if (cell == nil) {
+        cell = [[ComicTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ComicTableCell"];
+    }
+    
+    Comic *comic = subscriptionData[indexPath.row];
+    cell.comicTitle.text = comic.name;
+    cell.unread.text = [NSString stringWithFormat:@"%d", comic.unread];
+    
     return cell;
 }
 
@@ -83,7 +162,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        [subscriptionData removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -109,16 +188,33 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSDate *object = _objects[indexPath.row];
-        self.detailViewController.detailItem = object;
+        Comic *comic = subscriptionData[indexPath.row];
+        self.detailViewController.detailItem = comic;
+        
+        [self clearReadComics];
+        [self clearUpdates:comic];
     }
+}
+
+- (void)clearReadComics {
+    NSMutableArray *itemsToKeep = [NSMutableArray arrayWithCapacity:[subscriptionData count]];
+    for (Comic *comic in subscriptionData) {
+        if (comic.unread > 0) {
+            [itemsToKeep addObject:comic];
+        }
+    }
+    [subscriptionData setArray:itemsToKeep];
+    
+    NSIndexPath *ipath = [self.tableView indexPathForSelectedRow];
+    [self.tableView reloadData];
+    [self.tableView selectRowAtIndexPath:ipath animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
+        Comic *object = subscriptionData[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14009EEB663544C2BEBED12E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E3BD4806014C72878917AF /* libPods.a */; };
+		CF2619E91776CE2900C49B3B /* Comic.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2619E81776CE2900C49B3B /* Comic.m */; };
+		CF2619EB1777799D00C49B3B /* ComicTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2619EA1777799C00C49B3B /* ComicTableCell.xib */; };
+		CF2619EE17777A3800C49B3B /* ComicTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2619ED17777A3800C49B3B /* ComicTableCell.m */; };
 		CF99A41A1776617600D2DC04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF99A4191776617600D2DC04 /* UIKit.framework */; };
 		CF99A41C1776617600D2DC04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF99A41B1776617600D2DC04 /* Foundation.framework */; };
 		CF99A41E1776617600D2DC04 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF99A41D1776617600D2DC04 /* CoreGraphics.framework */; };
@@ -25,6 +29,7 @@
 		CF99A4461776617600D2DC04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF99A41B1776617600D2DC04 /* Foundation.framework */; };
 		CF99A44E1776617600D2DC04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF99A44C1776617600D2DC04 /* InfoPlist.strings */; };
 		CF99A4511776617600D2DC04 /* habaneroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF99A4501776617600D2DC04 /* habaneroTests.m */; };
+		CF99A48C1776B93600D2DC04 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CF99A48B1776B93600D2DC04 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15E3BD4806014C72878917AF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B05778685B274B17B4D3C142 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		CF2619E71776CE2900C49B3B /* Comic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comic.h; sourceTree = "<group>"; };
+		CF2619E81776CE2900C49B3B /* Comic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comic.m; sourceTree = "<group>"; };
+		CF2619EA1777799C00C49B3B /* ComicTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComicTableCell.xib; sourceTree = "<group>"; };
+		CF2619EC17777A3800C49B3B /* ComicTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicTableCell.h; sourceTree = "<group>"; };
+		CF2619ED17777A3800C49B3B /* ComicTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicTableCell.m; sourceTree = "<group>"; };
 		CF99A4161776617600D2DC04 /* habanero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = habanero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF99A4191776617600D2DC04 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF99A41B1776617600D2DC04 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,6 +75,8 @@
 		CF99A44D1776617600D2DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF99A44F1776617600D2DC04 /* habaneroTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = habaneroTests.h; sourceTree = "<group>"; };
 		CF99A4501776617600D2DC04 /* habaneroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = habaneroTests.m; sourceTree = "<group>"; };
+		CF99A48A1776B93600D2DC04 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		CF99A48B1776B93600D2DC04 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +87,7 @@
 				CF99A41A1776617600D2DC04 /* UIKit.framework in Frameworks */,
 				CF99A41C1776617600D2DC04 /* Foundation.framework in Frameworks */,
 				CF99A41E1776617600D2DC04 /* CoreGraphics.framework in Frameworks */,
+				14009EEB663544C2BEBED12E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +111,7 @@
 				CF99A4491776617600D2DC04 /* habaneroTests */,
 				CF99A4181776617600D2DC04 /* Frameworks */,
 				CF99A4171776617600D2DC04 /* Products */,
+				B05778685B274B17B4D3C142 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +131,7 @@
 				CF99A41B1776617600D2DC04 /* Foundation.framework */,
 				CF99A41D1776617600D2DC04 /* CoreGraphics.framework */,
 				CF99A4431776617600D2DC04 /* SenTestingKit.framework */,
+				15E3BD4806014C72878917AF /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,6 +148,13 @@
 				CF99A43A1776617600D2DC04 /* DetailViewController.h */,
 				CF99A43B1776617600D2DC04 /* DetailViewController.m */,
 				CF99A4201776617600D2DC04 /* Supporting Files */,
+				CF99A48A1776B93600D2DC04 /* User.h */,
+				CF99A48B1776B93600D2DC04 /* User.m */,
+				CF2619E71776CE2900C49B3B /* Comic.h */,
+				CF2619E81776CE2900C49B3B /* Comic.m */,
+				CF2619EA1777799C00C49B3B /* ComicTableCell.xib */,
+				CF2619EC17777A3800C49B3B /* ComicTableCell.h */,
+				CF2619ED17777A3800C49B3B /* ComicTableCell.m */,
 			);
 			path = habanero;
 			sourceTree = "<group>";
@@ -175,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF99A4541776617600D2DC04 /* Build configuration list for PBXNativeTarget "habanero" */;
 			buildPhases = (
+				69133F6435BD42D1A8D47E9E /* Check Pods Manifest.lock */,
 				CF99A4121776617600D2DC04 /* Sources */,
 				CF99A4131776617600D2DC04 /* Frameworks */,
 				CF99A4141776617600D2DC04 /* Resources */,
+				F5D32AC94C75449887567F0F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,6 +271,7 @@
 				CF99A4301776617600D2DC04 /* Default-568h@2x.png in Resources */,
 				CF99A4331776617600D2DC04 /* MainStoryboard_iPhone.storyboard in Resources */,
 				CF99A4361776617600D2DC04 /* MainStoryboard_iPad.storyboard in Resources */,
+				CF2619EB1777799D00C49B3B /* ComicTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +286,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		69133F6435BD42D1A8D47E9E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
 		CF99A4401776617600D2DC04 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,6 +313,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		F5D32AC94C75449887567F0F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -283,6 +338,9 @@
 				CF99A42A1776617600D2DC04 /* AppDelegate.m in Sources */,
 				CF99A4391776617600D2DC04 /* MasterViewController.m in Sources */,
 				CF99A43C1776617600D2DC04 /* DetailViewController.m in Sources */,
+				CF99A48C1776B93600D2DC04 /* User.m in Sources */,
+				CF2619E91776CE2900C49B3B /* Comic.m in Sources */,
+				CF2619EE17777A3800C49B3B /* ComicTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,22 +458,26 @@
 		};
 		CF99A4551776617600D2DC04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B05778685B274B17B4D3C142 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "habanero/habanero-Prefix.pch";
 				INFOPLIST_FILE = "habanero/habanero-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		CF99A4561776617600D2DC04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B05778685B274B17B4D3C142 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "habanero/habanero-Prefix.pch";
 				INFOPLIST_FILE = "habanero/habanero-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -473,6 +535,7 @@
 				CF99A4561776617600D2DC04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF99A4571776617600D2DC04 /* Build configuration list for PBXNativeTarget "habaneroTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +544,7 @@
 				CF99A4591776617600D2DC04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

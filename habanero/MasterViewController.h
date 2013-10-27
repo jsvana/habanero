@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "User.h"
+
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UITableViewController {
+    @private
+    NSMutableDictionary *comics;
+    NSMutableArray *subscriptionData;
+    NSString *csrfHam;
+    User *user;
+}
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
